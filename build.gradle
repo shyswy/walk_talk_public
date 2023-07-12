@@ -1,0 +1,168 @@
+buildscript {
+    ext {
+        queryDslVersion = "5.0.0"
+    }
+}
+
+plugins {
+    id 'java'
+    id 'war'
+    id 'org.springframework.boot' version '2.7.8'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
+
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+    implementation 'junit:junit:4.13.1'
+    implementation 'org.projectlombok:lombok:1.18.22'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+    annotationProcessor 'org.projectlombok:lombok'
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+
+
+    //implementation 'javax.security:auth.message-api:1.1'
+    implementation 'com.auth0:java-jwt:3.19.2'
+
+    //multipart
+    implementation 'commons-fileupload:commons-fileupload:1.4'
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'com.google.code.gson:gson:2.8.7'
+
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    testAnnotationProcessor 'org.projectlombok:lombok' //추가
+
+    implementation 'org.jsoup:jsoup:1.11.3'
+
+
+    //image 축소
+    implementation group: 'org.imgscalr', name: 'imgscalr-lib', version: '4.2'
+    implementation group: 'com.drewnoakes', name: 'metadata-extractor', version: '2.9.1'
+
+    //WebClient
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+
+    implementation 'org.springframework.boot:spring-boot-autoconfigure:2.6.5'
+
+    implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
+
+    //Mac OS DNS
+    //implementation 'io.netty:netty-resolver-dns-native-macos:2.1.4.Final'
+
+    // FCM push
+    implementation 'com.google.firebase:firebase-admin:6.8.1'
+
+    //okhttp3
+    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.2.2'
+    //test webserver
+    testImplementation 'com.squareup.okhttp3:mockwebserver:4.2.2'
+
+
+    //caching
+    implementation 'net.sf.ehcache:ehcache:2.10.6'
+
+    //Transactionl(ReadOnly)
+    implementation 'org.springframework:spring-context:5.3.9'
+
+    //@Transactional(readonly=~)
+    implementation 'org.springframework:spring-tx:5.3.9'
+
+
+    //redis ( cache)
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    //implementation 'it.ozimov:embedded-redis:0.7.2' // 테스트 용도로 내장 서버 Redis 환경 구성
+
+    //redis localDate 호환
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.0'
+
+    //querty dsl
+    implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
+    implementation "com.querydsl:querydsl-apt:${queryDslVersion}"
+    //implementation 'com.querydsl:querydsl-jpa:${queryDslVersion}'
+
+
+    //테스트
+//    testImplementation 'org.mockito:mockito-all:1.9.5'
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+    implementation 'net.datafaker:datafaker:1.5.0'
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    //aop
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+
+}
+
+repositories {
+    mavenCentral()
+
+}
+
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+///querydsl 추가 시작
+def querydslDir = "$buildDir/generated/querydsl"
+
+querydsl {
+    jpa = true
+    querydslSourcesDir = querydslDir
+}
+sourceSets {
+    main.java.srcDir querydslDir
+}
+compileQuerydsl{
+    options.annotationProcessorPath = configurations.querydsl
+}
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+    querydsl.extendsFrom compileClasspath
+}
+//querydsl 추가 끝
