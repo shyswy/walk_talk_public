@@ -23,7 +23,7 @@
 
 # 프로젝트 설명
 
-[walk-talk 설명 문서](https://www.notion.so/walk-talk-3e9dffa20ab94015a1d524524e0418e8?pvs=21) 
+[walk-talk 설명 문서](https://shyswy.notion.site/walk-talk-public-47104bca804946e499b98be2b15d3697?pvs=4) 
 
 # 코딩 컨벤션
 
