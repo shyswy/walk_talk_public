@@ -29,6 +29,12 @@
 
 [walk-talk 코딩 컨벤션](https://shyswy.notion.site/code-convention-402842f4a27e4ca88f753b2b209dd7d1?pvs=4)
 
+# 관련 정리 문서
+
+[인증 방식 설명 문서](https://www.notion.so/shyswy/walk-talk-0ac943c21e434a5e9d55cf34f22226f6)
+
+[캐싱](https://codenme.tistory.com/157) 및 [인덱싱](https://codenme.tistory.com/83) 관련 정리글
+
 # ⚒️ 기술스택
 
 ---
