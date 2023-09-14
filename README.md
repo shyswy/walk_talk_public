@@ -31,6 +31,8 @@
 
 # 관련 정리 문서
 
+[최적화 관련 정리 문서](https://www.notion.so/shyswy/optimization-note-c20a190a568f4d79a3ab46cb469a0272)
+
 [인증 방식 설명 문서](https://www.notion.so/shyswy/walk-talk-0ac943c21e434a5e9d55cf34f22226f6)
 
 [캐싱](https://codenme.tistory.com/157) 및 [인덱싱](https://codenme.tistory.com/83) 관련 정리글
