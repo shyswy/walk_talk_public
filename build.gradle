@@ -51,7 +51,7 @@ dependencies {
     implementation 'commons-fileupload:commons-fileupload:1.4'
 
 
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    //implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'com.google.code.gson:gson:2.8.7'
 
     implementation 'io.jsonwebtoken:jjwt:0.9.1'
@@ -112,13 +112,9 @@ dependencies {
     implementation "com.querydsl:querydsl-apt:${queryDslVersion}"
     //implementation 'com.querydsl:querydsl-jpa:${queryDslVersion}'
 
-
-    //테스트
-//    testImplementation 'org.mockito:mockito-all:1.9.5'
+    //Test
     testImplementation 'org.mockito:mockito-core:3.12.4'
     implementation 'net.datafaker:datafaker:1.5.0'
-
-
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 
