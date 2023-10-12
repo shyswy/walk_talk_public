@@ -23,11 +23,19 @@
 
 # 프로젝트 설명
 
-[walk-talk 설명 문서](https://www.notion.so/walk-talk-3e9dffa20ab94015a1d524524e0418e8?pvs=21) 
+[walk-talk 설명 문서](https://shyswy.notion.site/walk-talk-public-47104bca804946e499b98be2b15d3697?pvs=4) 
 
 # 코딩 컨벤션
 
 [walk-talk 코딩 컨벤션](https://shyswy.notion.site/code-convention-402842f4a27e4ca88f753b2b209dd7d1?pvs=4)
+
+# 관련 정리 문서
+
+[최적화 관련 정리 문서](https://www.notion.so/shyswy/optimization-note-c20a190a568f4d79a3ab46cb469a0272)
+
+[인증 방식 설명 문서](https://www.notion.so/shyswy/walk-talk-0ac943c21e434a5e9d55cf34f22226f6)
+
+[캐싱](https://codenme.tistory.com/157) 및 [인덱싱](https://codenme.tistory.com/83) 관련 정리글
 
 # ⚒️ 기술스택
 
